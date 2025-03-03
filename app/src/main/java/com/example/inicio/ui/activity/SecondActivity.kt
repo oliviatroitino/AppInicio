@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inicio.R
 import com.example.inicio.adapter.ContactAdapter
@@ -39,9 +40,16 @@ class SecondActivity : AppCompatActivity() {
         // asociar el adaptador con la lista de datos
         binding.recycler.adapter = adapterContact
         // si no hago este paso es imposible ver absolutamente nada
-        binding.recycler.layoutManager = LinearLayoutManager(
-            applicationContext, LinearLayoutManager.VERTICAL, false
-        )
+
+        if (resources.configuration.orientation == 1){ // caso Portrait mode
+            binding.recycler.layoutManager = LinearLayoutManager(
+                applicationContext, LinearLayoutManager.VERTICAL, false
+            )
+        } else {
+            binding.recycler.layoutManager = GridLayoutManager(
+                applicationContext,2, LinearLayoutManager.VERTICAL, false
+            )
+        }
 
     }
 
