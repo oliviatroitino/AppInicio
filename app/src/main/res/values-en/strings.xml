@@ -1,3 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Conjunto de palabras-->
+    <string name="hint_pass">Enter password.</string>
+    <string name="label_check">Allow login</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string-array name="perfiles">
+        <item>Admin</item>
+        <item>User</item>
+    </string-array>
 </resources>

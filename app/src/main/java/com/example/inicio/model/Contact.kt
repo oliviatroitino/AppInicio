@@ -1,4 +1,9 @@
 package com.example.inicio.model
 
-class Contact {
+import java.io.Serializable
+
+class Contact (var nombre: String,
+               var telefono: Int,
+               var direccion: String,
+               var imagen: String) : Serializable {
 }
