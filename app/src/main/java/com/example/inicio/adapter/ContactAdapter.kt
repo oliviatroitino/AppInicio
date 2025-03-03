@@ -1,6 +1,7 @@
 package com.example.inicio.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.inicio.R
 import com.example.inicio.model.Contact
 
@@ -45,7 +47,13 @@ class ContactAdapter(var lista: List<Contact>, var context: Context) :
         val contact = lista[position] // recomendable sobre lista.get(position)
         holder.toolbar.title = contact.nombre
         holder.texto.text = contact.telefono.toString()
-
-        // TODO pendiente de poner imagen por URL
+        Glide.with(context).load(contact.imagen)
+            .placeholder(R.drawable.defaultcontact)
+            .into(holder.imagen)
+        holder.card.setOnClickListener{
+            val intent: Intent() // TODO completar
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        }
     }
 }
