@@ -3,7 +3,7 @@ package com.example.inicio.model
 import java.io.Serializable
 
 // constructores (primario -pedir datos obligatorios- y secundario), attr, function
-class User(private var correo: String?=null, private var pass: String?=null, private var perfil: String?=null)
+class User(private var email: String?=null, private var password: String?=null, private var perfil: String?=null)
     : Serializable {
 
     // deberian tambien tener getters y setters
@@ -19,16 +19,16 @@ class User(private var correo: String?=null, private var pass: String?=null, pri
 
     // Getters y Setters
     fun getCorreo(): String? {
-        return this.correo
+        return this.email
     }
     fun setCorreo(correo: String){
-        this.correo = correo
+        this.email = correo
     }
     fun getPass(): String? {
-        return this.pass
+        return this.password
     }
     fun setPass(pass: String){
-        this.pass = pass
+        this.password = pass
     }
     fun getPerfil(): String? {
         return this.perfil
