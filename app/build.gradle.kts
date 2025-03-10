@@ -40,8 +40,9 @@ android {
 
 dependencies {
 
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    //implementation(libs.glide) // no se resuelve la referencia, lo dejamos como antes (no esta en libs.versions.toml)
+    implementation(libs.glide)
+    implementation(libs.volley)
+    implementation(libs.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
